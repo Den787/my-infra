@@ -2,14 +2,11 @@ terraform {
 # Версия terraform
 required_version = "0.11.11"
 }
-
 provider "google" {
 # Версия провайдера
 version = "2.0.0"
-
 # ID проекта
 project = "${var.project}"
-
 region = "${var.region}"
 }
 
@@ -51,6 +48,7 @@ script = "files/deploy.sh"
 }
 }
 
+
 resource "google_compute_firewall" "firewall_puma" {
 name = "allow1-puma-default"
 # Название сети, в которой действует правило
@@ -64,4 +62,5 @@ ports = ["9292"]
 source_ranges = ["0.0.0.0/0"]
 # Правило применимо для инстансов с перечисленными тэгами
 target_tags = ["reddit-app"]
+
 }
