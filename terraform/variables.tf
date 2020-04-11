@@ -1,15 +1,24 @@
 variable project {
-description = "Project ID"
+  description = "Project ID"
 }
+
 variable region {
-description = "Region"
-# Значение по умолчанию
-default = "europe-west1"
+  description = "Region"
+
+  # Значение по умолчанию
+  default = "europe-west1"
 }
+
 variable public_key_path {
-# Описание переменной
-description = "Path to the public key used for ssh access"
+  # Описание переменной
+  description = "Path to the public key used for ssh access"
 }
+
 variable disk_image {
-description = "Disk image"
+  description = "Disk image"
+}
+
+variable "zone" {
+  description = "Zone"
+  default     = "europe-west1-b"
 }
